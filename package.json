@@ -14,7 +14,7 @@
     "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\""
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"

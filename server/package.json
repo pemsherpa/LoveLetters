@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "npm install"
+    "build": "npm install",
+    "preinstall": "npm rebuild bcrypt --build-from-source"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,6 @@
     "nodemon": "^2.0.21"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x"
   }
 }
