@@ -8,6 +8,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const { sendEmail } = require('./emailService');
+const fs = require('fs');
 
 // Load environment variables
 dotenv.config();
@@ -359,7 +360,24 @@ function getFont(style) {
   return fonts[style] || 'Arial, sans-serif';
 }
 
+// Add a simple health check endpoint for Render
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  // Create uploads directory if it doesn't exist
+  const uploadsDir = path.join(__dirname, 'uploads');
+  if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+  }
+  
+  // Serve static files from the uploads directory
+  app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+}
+
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 }); 
