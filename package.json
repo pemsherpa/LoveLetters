@@ -5,16 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "cd server && npm run start",
-    "install-server": "cd server && npm install",
-    "install-client": "cd client && npm install",
-    "install": "npm run install-server && npm run install-client",
+    "install-server": "cd server && npm install --no-package-lock",
+    "install-client": "cd client && npm install --no-package-lock",
+    "postinstall": "npm run install-server && npm run install-client",
     "build-client": "cd client && npm run build",
     "dev-server": "cd server && npm run dev",
     "dev-client": "cd client && npm run start",
     "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\""
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=14.0.0"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
