@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for uploads (create .gitkeep to maintain directory structure)
+uploads/*
+!uploads/.gitkeep
+
+# Database related
+*.sqlite
+*.sqlite-journal
+*.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+temp/
+tmp/
+.tmp/
+
+# Email templates/output (since this is an email-sending app)
+email-templates/build/
+
+# nodemon config if used
+.nodemonrc
+nodemon.json

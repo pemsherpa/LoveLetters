@@ -1,0 +1,1 @@
+require('dotenv').config(); console.log('ENV TEST:', { EMAIL_USER: process.env.EMAIL_USER, EMAIL_PASS_LENGTH: process.env.EMAIL_PASS ? process.env.EMAIL_PASS.length : 0, NODE_ENV: process.env.NODE_ENV, DATABASE_URL: process.env.DATABASE_URL });

@@ -18,6 +18,7 @@ CREATE TABLE letters (
   sender_id INTEGER REFERENCES users(id),
   recipient_email VARCHAR(255),
   access_code VARCHAR(20),
+  title VARCHAR(255),
   content TEXT,
   style VARCHAR(50),
   paper_type VARCHAR(50),
